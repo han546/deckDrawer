@@ -36,21 +36,22 @@ public class deckOfCards{
 		return deck;
 	}
 
-
 	public void drawCard(List<Card> deck){
+
 		if (deck.size() == 0){
 			System.out.println("Deck is Empty!");
 			return;
 		}
-
+		//select random card based on deck size
 		Random rand = new Random();
 		int randCard = rand.nextInt(deck.size());
 		System.out.println(deck.get(randCard).getValue() + " of " + deck.get(randCard).getSuit());
-		deck.remove(randCard);
+		deck.remove(randCard); //remove card after drawing
 		return;
 	}
 
 	public static void main(String[] args){
+
 		deckOfCards deckofcards = new deckOfCards();
 		Scanner in = new Scanner(System.in);
 		System.out.print("How many cards do you want to draw? ");
